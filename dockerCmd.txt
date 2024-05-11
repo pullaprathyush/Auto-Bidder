@@ -1,0 +1,7 @@
+To run database container:
+note: create docker volume first using "docker volume create ct-db-data"
+command : docker run -d -p 3306:3306 -v ct-db-data:/var/lib/mysql --name databaseInstance -e MYSQL_ALLOW_EMPTY_PASSWORD='' -e MYSQL_DATABASE=car_tijarat db
+
+To run server container :
+note: no need to rebuild after change.just restart container, files will be presistent.
+command:docker run -v "%cd%":/app -d -p 5000:5000 --name serverInstance server 
